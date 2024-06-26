@@ -92,10 +92,9 @@ class HabitDatabase extends ChangeNotifier {
             date.month == DateTime.now().month &&
             date.day == DateTime.now().day);
         }
+        // save the updated habits
+        await isar.habits.put(habit);
       });
-
-      // save the updated habits
-      await isar.habits.put(habit);
     }
 
     // re-read from db
